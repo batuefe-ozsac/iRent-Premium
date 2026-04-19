@@ -4,20 +4,29 @@ package service;
 import java.util.List;
 
 import model.Car;
+import repository.ICarRepository;
 import repository.InMemoryDatabase;
 
 public class CarService {
 	
-	private InMemoryDatabase database = InMemoryDatabase.getInstance();
+	private ICarRepository carRepository;
 	
-	public void addCar(Car car)
+	public CarService() {
+		this.carRepository = InMemoryDatabase.getInstance();
+	}
+	
+	public void addNewCar(Car car)
 	{
-		database.getCars().add(car);
+		carRepository.addCar(car);
 	}
 	
 	public List<Car> getCarsList()
 	{
-		return database.getCars();
+		return carRepository.getAllCars();
+	}
+	
+	public Car findCar(String id) {
+		return carRepository.getCarById(id);
 	}
 	
 }

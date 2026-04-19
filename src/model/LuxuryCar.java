@@ -6,5 +6,10 @@ public class LuxuryCar extends Car {
 		super(id, brand, model, dailyPrice);
 		// TODO Auto-generated constructor stub
 	}
+	
+	@Override
+	public String getCarType() {
+		return "LUXURY";
+	}
 
 }

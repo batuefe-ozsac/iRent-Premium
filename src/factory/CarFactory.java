@@ -6,8 +6,13 @@ import model.SedanCar;
 
 public class CarFactory {
 
-	public static Car createCar(String type, String id,String brand, String model, double dailyPrice) 
+	public Car createCar(String type, String id,String brand, String model, double dailyPrice) 
 	{
+		
+		if(type == null) {
+			return null;
+		}
+		
 		if(type.equalsIgnoreCase("SEDAN")) 
 		{
 			return new SedanCar(id,brand,model,dailyPrice);
@@ -21,3 +26,4 @@ public class CarFactory {
 		return null;
 	}
 }
+ 

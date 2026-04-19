@@ -6,5 +6,9 @@ public class SedanCar extends Car {
 		super(id, brand, model, dailyPrice);
 		// TODO Auto-generated constructor stub
 	}
+	
+	public String getCarType() {
+		return "SEDAN";
+	}
 
 }
